@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { useTranslation } from 'react-i18next';
 import { View, Text, Button, StyleSheet, SafeAreaView } from "react-native";
 import { AppContext } from "../context/AppContext";
 
