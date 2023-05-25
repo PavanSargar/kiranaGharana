@@ -3,10 +3,17 @@ import { View, Text, Button, StyleSheet, SafeAreaView } from "react-native";
 import { AppContext } from "../context/AppContext";
 
 const HomeScreen = ({ navigation }) => {
+  const { language, changeLanguage } = useContext(AppContext);
   const { user, setUser } = useContext(AppContext);
+  const { t } = useTranslation();
 
   const handleLogout = () => {
     setUser(null);
+  };
+
+  const handleLanguageChange = () => {
+    const newLanguage = language === "en" ? "hi" : "en";
+    changeLanguage(newLanguage);
   };
 
   return (

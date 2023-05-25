@@ -5,6 +5,7 @@ import { AppProvider } from './src/context/AppContext';
 import { loadUserFromStorage } from './src/storage/UserStorage';
 import HomeScreen from './src/screens/HomeScreen';
 import DetailsScreen from './src/screens/DetailsScreen';
+import './src/localization/i18n';
 
 const Stack = createStackNavigator();
 
