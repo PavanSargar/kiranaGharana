@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
-import { View, Text, Button } from 'react-native';
-import { AppContext } from '../context/AppContext';
+import React, { useContext } from "react";
+import { View, Text, Button, StyleSheet, SafeAreaView } from "react-native";
+import { AppContext } from "../context/AppContext";
 
 const HomeScreen = ({ navigation }) => {
   const { user, setUser } = useContext(AppContext);
@@ -10,15 +10,20 @@ const HomeScreen = ({ navigation }) => {
   };
 
   return (
-    <View>
-      <Text>Welcome to the Home Screen, {user ? user.name : 'Guest'}!</Text>
-      {user && <Button title="Logout" onPress={handleLogout} />}
-      <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('Details')}
-      />
+    <View style={styles.container}>
+      <Text>Welcome to the Home Screen</Text>
+
+      <SafeAreaView></SafeAreaView>
     </View>
   );
 };
 
 export default HomeScreen;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});
