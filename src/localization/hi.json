@@ -1,5 +1,7 @@
 {
     "welcome": "स्वागत है!",
     "home": "होम",
-    "details": "विवरण"
+    "details": "विवरण",
+    "proceed": "आगे बढ़े",
+    "select-your-lang" : "अपनी भाषा का चयन करें" 
   }

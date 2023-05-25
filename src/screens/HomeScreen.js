@@ -1,5 +1,5 @@
-import React, { useContext, useState } from "react";
-import { useTranslation } from 'react-i18next';
+import React, { useContext, useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import {
   View,
   Text,
@@ -13,11 +13,11 @@ import { AppContext } from "../context/AppContext";
 
 const DATA = [
   {
-    id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
+    id: "en",
     title: "English",
   },
   {
-    id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
+    id: "hi",
     title: "हिंदी",
   },
 ];
@@ -32,18 +32,16 @@ const Item = ({ item, onPress, backgroundColor, textColor }) => (
 );
 
 const HomeScreen = ({ navigation }) => {
-  const [selectedId, setSelectedId] = useState("");
+  const [selectedId, setSelectedId] = useState("en");
   const { language, changeLanguage } = useContext(AppContext);
   const { user, setUser } = useContext(AppContext);
   const { t } = useTranslation();
 
+  const proceed = t("proceed");
+  const subHeading = t("select-your-lang");
+
   const handleLogout = () => {
     setUser(null);
-  };
-
-  const handleLanguageChange = () => {
-    const newLanguage = language === "en" ? "hi" : "en";
-    changeLanguage(newLanguage);
   };
 
   const onProceed = () => {};
@@ -62,10 +60,19 @@ const HomeScreen = ({ navigation }) => {
     );
   };
 
+  useEffect(() => {
+    changeLanguage(selectedId);
+  }, [selectedId]);
+
   return (
     <View style={styles.container}>
       <SafeAreaView style={styles.languages}>
         <Text style={styles.heading}>Select your language</Text>
+        {selectedId === "en" ? (
+          <Text style={styles.subHeading}>{}</Text>
+        ) : (
+          <Text style={styles.subHeading}>{subHeading}</Text>
+        )}
 
         <FlatList
           data={DATA}
@@ -76,7 +83,7 @@ const HomeScreen = ({ navigation }) => {
 
         <TouchableOpacity onPress={onProceed} style={styles.proceedBtn}>
           <Text style={styles.proceedTitle}>Proceed</Text>
-          <Text style={styles.proceedTitle}>आगे बढ़े</Text>
+          <Text style={styles.proceedTitle}>{proceed}</Text>
         </TouchableOpacity>
       </SafeAreaView>
     </View>
@@ -95,8 +102,15 @@ const styles = StyleSheet.create({
   heading: {
     fontSize: 28,
     textAlign: "center",
-    marginBottom: 108,
-    color: "#356744"
+    marginBottom: 20,
+    marginTop: 20,
+    color: "#356744",
+  },
+  subHeading: {
+    fontSize: 20,
+    textAlign: "center",
+    marginBottom: 100,
+    color: "#C9C9C9",
   },
   languages: {
     paddingTop: 50,
@@ -129,10 +143,10 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "flex-start",
     justifyContent: "space-between",
-    gap: 20
+    gap: 20,
   },
   proceedTitle: {
     color: "#fff",
     fontSize: 19,
-  }
+  },
 });
