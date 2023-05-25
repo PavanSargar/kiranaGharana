@@ -4,7 +4,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { loadUserFromStorage } from "../storage/UserStorage";
 import { AppProvider } from "../context/AppContext";
 import HomeScreen from "../screens/HomeScreen";
-import DetailsScreen from "../screens/DetailsScreen";
+import InputNumberScreen from "../screens/InputNumberScreen";
+import BackBtn from "../components/BackBtn";
 
 const Stack = createStackNavigator();
 
@@ -21,7 +22,14 @@ const Navigation = () => {
             component={HomeScreen}
             options={{ headerShown: false }}
           />
-          <Stack.Screen name="Details" component={DetailsScreen} />
+          <Stack.Screen
+            name="InputNumber"
+            options={({ navigation }) => ({
+              title: "", // Removes the title
+              headerLeft: () => <BackBtn navigation={navigation} />,
+            })}
+            component={InputNumberScreen}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </AppProvider>

@@ -1,7 +1,9 @@
 {
     "welcome": "स्वागत है!",
     "home": "होम",
-    "details": "विवरण",
     "proceed": "आगे बढ़े",
-    "select-your-lang" : "अपनी भाषा का चयन करें" 
+    "BackBtnTxt": "पीछे जाये",
+    "EnterNumberHeading": "अपना फ़ोन नंबर साझा करें",
+    "EnterNumberText": "आप पीला बटन दबाकर अपना फ़ोन नंबर बता सकते हैं।",
+    "TellYourNumber": "अपना फ़ोन नंबर बताओ"
   }

@@ -33,18 +33,18 @@ const Item = ({ item, onPress, backgroundColor, textColor }) => (
 
 const HomeScreen = ({ navigation }) => {
   const [selectedId, setSelectedId] = useState("en");
-  const { language, changeLanguage } = useContext(AppContext);
-  const { user, setUser } = useContext(AppContext);
+  const { language, changeLanguage, setLanguage, user, setUser } =
+    useContext(AppContext);
   const { t } = useTranslation();
-
   const proceed = t("proceed");
-  const subHeading = t("select-your-lang");
 
   const handleLogout = () => {
     setUser(null);
   };
-
-  const onProceed = () => {};
+  const handleLanguageChange = (language) => {};
+  const onProceed = () => {
+    setLanguage(selectedId);
+  };
 
   const renderItem = ({ item }) => {
     const backgroundColor = item.id === selectedId ? "#FFB129" : "transparent";
@@ -68,11 +68,8 @@ const HomeScreen = ({ navigation }) => {
     <View style={styles.container}>
       <SafeAreaView style={styles.languages}>
         <Text style={styles.heading}>Select your language</Text>
-        {selectedId === "en" ? (
-          <Text style={styles.subHeading}>{}</Text>
-        ) : (
-          <Text style={styles.subHeading}>{subHeading}</Text>
-        )}
+
+        <Text style={styles.subHeading}>अपनी भाषा का चयन करें।</Text>
 
         <FlatList
           data={DATA}
@@ -80,8 +77,10 @@ const HomeScreen = ({ navigation }) => {
           keyExtractor={(item) => item.id}
           extraData={selectedId}
         />
-
-        <TouchableOpacity onPress={onProceed} style={styles.proceedBtn}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("InputNumber")}
+          style={styles.proceedBtn}
+        >
           <Text style={styles.proceedTitle}>Proceed</Text>
           <Text style={styles.proceedTitle}>{proceed}</Text>
         </TouchableOpacity>

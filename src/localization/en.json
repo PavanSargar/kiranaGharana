@@ -1,6 +1,9 @@
 {
     "welcome": "Welcome!",
-    "proceed": "Proceed",
     "home": "Home",
-    "details": "Details"
+    "proceed": "Proceed",
+    "BackBtnTxt": "Go Back",
+    "EnterNumberHeading": "Enter your Phone number",
+    "EnterNumberText": "You can tell your phone number by pressing the yellow button",
+    "TellYourNumber": "Tell your phone number"
   }
