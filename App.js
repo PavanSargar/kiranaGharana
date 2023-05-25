@@ -1,25 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { AppProvider } from './src/context/AppContext';
+import { loadUserFromStorage } from './src/storage/UserStorage';
+import HomeScreen from './src/screens/HomeScreen';
+import DetailsScreen from './src/screens/DetailsScreen';
 
-export default function App() {
+const Stack = createStackNavigator();
+
+const App = () => {
+  // Load user from storage during app initialization
+  loadUserFromStorage();
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>
-        Hello Akshay!
-      </Text>
-      <StatusBar style="auto" />
-    </View>
+    <AppProvider>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="Details" component={DetailsScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </AppProvider>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  text: {
-    fontSize: 50
-  }
-});
+export default App;
