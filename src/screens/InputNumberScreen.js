@@ -29,7 +29,10 @@ const InputNumberScreen = ({ navigation }) => {
           />
           <Text style={styles.text}>{t("EnterNumberText")}</Text>
         </View>
-        <SpeakBtn btnText={t("TellYourNumber")} />
+        <SpeakBtn
+          onPress={() => navigation.navigate("Order")}
+          btnText={t("TellYourNumber")}
+        />
       </SafeAreaView>
     </View>
   );

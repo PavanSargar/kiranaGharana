@@ -6,6 +6,7 @@ import { AppProvider } from "../context/AppContext";
 import HomeScreen from "../screens/HomeScreen";
 import InputNumberScreen from "../screens/InputNumberScreen";
 import BackBtn from "../components/BackBtn";
+import OrderScreen from "../screens/OrderScreen";
 
 const Stack = createStackNavigator();
 
@@ -29,6 +30,14 @@ const Navigation = () => {
               headerLeft: () => <BackBtn navigation={navigation} />,
             })}
             component={InputNumberScreen}
+          />
+          <Stack.Screen
+            name="Order"
+            options={({ navigation }) => ({
+              title: "", // Removes the title
+              headerLeft: () => <BackBtn navigation={navigation} />,
+            })}
+            component={OrderScreen}
           />
         </Stack.Navigator>
       </NavigationContainer>

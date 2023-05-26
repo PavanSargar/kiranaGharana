@@ -4,7 +4,7 @@ import { AppContext } from "../context/AppContext";
 import { useTranslation } from "react-i18next";
 import MicrophoneIcon from "react-native-vector-icons/FontAwesome5";
 
-const SpeakBtn = ({ navigation, btnText }) => {
+const SpeakBtn = ({ navigation, btnText, onPress }) => {
   const { language } = useContext(AppContext);
   const { t } = useTranslation();
   const handlePress = () => {
@@ -13,7 +13,7 @@ const SpeakBtn = ({ navigation, btnText }) => {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity onPress={onPress} style={styles.button}>
         <MicrophoneIcon name="microphone-alt" size={24} color="white"/>
         <Text style={styles.buttonText}>{btnText}</Text>
       </TouchableOpacity>
