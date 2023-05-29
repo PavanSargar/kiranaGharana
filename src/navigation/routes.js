@@ -4,9 +4,11 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { loadUserFromStorage } from "../storage/UserStorage";
 import { AppProvider } from "../context/AppContext";
 import HomeScreen from "../screens/HomeScreen";
-import InputNumberScreen from "../screens/InputNumberScreen";
+import NumberScreen from "../screens/NumberScreen";
 import BackBtn from "../components/BackBtn";
 import OrderScreen from "../screens/OrderScreen";
+import InputNumberScreen from "../screens/InputNumberScreen.js";
+import AddressScreen from "../screens/AddressScreen";
 
 const Stack = createStackNavigator();
 
@@ -38,6 +40,22 @@ const Navigation = () => {
               headerLeft: () => <BackBtn navigation={navigation} />,
             })}
             component={OrderScreen}
+          />
+          <Stack.Screen
+            name="NumberScreen"
+            options={({ navigation }) => ({
+              title: "", // Removes the title
+              headerLeft: () => <BackBtn navigation={navigation} />,
+            })}
+            component={NumberScreen}
+          />
+          <Stack.Screen
+            name="AddressScreen"
+            options={({ navigation }) => ({
+              title: "", // Removes the title
+              headerLeft: () => <BackBtn navigation={navigation} />,
+            })}
+            component={AddressScreen}
           />
         </Stack.Navigator>
       </NavigationContainer>

@@ -1,9 +1,19 @@
 {
-    "welcome": "स्वागत है!",
-    "home": "होम",
-    "proceed": "आगे बढ़े",
-    "BackBtnTxt": "पीछे जाये",
-    "EnterNumberHeading": "अपना फ़ोन नंबर साझा करें",
-    "EnterNumberText": "आप पीला बटन दबाकर अपना फ़ोन नंबर बता सकते हैं।",
-    "TellYourNumber": "अपना फ़ोन नंबर बताओ"
-  }
+  "welcome": "स्वागत है!",
+  "home": "होम",
+  "proceed": "आगे बढ़े",
+  "BackBtnTxt": "पीछे जाये",
+  "EnterNumberHeading": "अपना फ़ोन नंबर साझा करें",
+  "EnterNumberText": "आप पीला बटन दबाकर अपना फ़ोन नंबर बता सकते हैं।",
+  "TellYourNumber": "अपना फ़ोन नंबर बताओ",
+  "EnterYourAddress": "अपना नंबर दर्ज करे",
+  "TellYourAddress": "अपना पता बताओ",
+  "EnterAddressText": "आप पीला बटन दबाकर अपना फ़ोन पता बता सकते हैं।",
+  "verifyOrderText": "ऑर्डर की पुष्टि करे",
+  "itemName": "किराना घराना गरम मसाला",
+  "itemDescription": "विवरन विवरन विवरन विवरन विवरन विवरन",
+  "kilogram": "किलोग्राम",
+  "amount": "किमत",
+  "discount": "छूट",
+  "total": "कूल मिलाके"
+}

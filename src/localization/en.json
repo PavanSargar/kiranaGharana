@@ -1,9 +1,18 @@
 {
-    "welcome": "Welcome!",
-    "home": "Home",
-    "proceed": "Proceed",
-    "BackBtnTxt": "Go Back",
-    "EnterNumberHeading": "Enter your Phone number",
-    "EnterNumberText": "You can tell your phone number by pressing the yellow button",
-    "TellYourNumber": "Tell your phone number"
-  }
+  "welcome": "Welcome!",
+  "home": "Home",
+  "proceed": "Proceed",
+  "BackBtnTxt": "Go Back",
+  "EnterNumberHeading": "Enter your Phone number",
+  "EnterNumberText": "You can tell your phone number by pressing the yellow button",
+  "TellYourNumber": "Tell your phone number",
+  "verifyOrderText": "Verify your Order",
+  "EnterAddressText": "You can indicate your phone address by pressing the yellow button.",
+  "TellYourAddress": "Tell your Address",
+  "itemName": "Kirana Gharana Garam Masala",
+  "itemDescription": "More description, more description",
+  "kilogram": "Kilogram",
+  "amount": "Amount",
+  "discount": "Discount",
+  "total": "Total"
+}

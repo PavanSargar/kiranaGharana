@@ -5,12 +5,13 @@ import {
   View,
   Text,
   Image,
-  Button,
   StyleSheet,
   SafeAreaView,
   TouchableOpacity,
 } from "react-native";
 import SpeakBtn from "../components/SpeakBtn";
+import CartItem from "../components/CartItem";
+import Button from "../components/Button";
 
 const OrderScreen = ({ navigation }) => {
   const { language } = useContext(AppContext);
@@ -19,27 +20,27 @@ const OrderScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <SafeAreaView style={styles.order}>
-        <Text>Hello sdfasfd asdf </Text>
+        <CartItem />
 
         <View style={styles.bottom}>
           <View style={styles.orderDetails}>
             <View style={styles.textGroup}>
-              <Text>Amount</Text>
+              <Text>{t("amount")}</Text>
               <Text>₹390</Text>
             </View>
             <View style={styles.textGroup}>
-              <Text>Discount</Text>
+              <Text>{t("discount")}</Text>
               <Text>-₹110</Text>
             </View>
             <View style={styles.line}></View>
             <View style={[styles.textGroup, { marginTop: 10 }]}>
-              <Text style={{fontSize: 20, fontWeight: 800}}>Total</Text>
+              <Text style={{ fontSize: 20, fontWeight: 800 }}>{t("total")}</Text>
               <Text>-₹280</Text>
             </View>
           </View>
-          <TouchableOpacity style={styles.orderBtn}>
-            <Text style={styles.btnText}>Verify your Order</Text>
-          </TouchableOpacity>
+          <Button>
+            <Text>{t("verifyOrderText")}</Text>
+          </Button>
         </View>
       </SafeAreaView>
     </View>
@@ -62,7 +63,7 @@ const styles = StyleSheet.create({
     backgroundColor: "red",
     paddingVertical: 20,
     paddingHorizontal: 20,
-    width: 350,
+    width: "75%",
     borderRadius: 50,
     display: "flex",
     flexDirection: "row",
